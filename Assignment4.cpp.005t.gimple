@@ -1,0 +1,55 @@
+increment (int & x)
+{
+  _1 = *x;
+  _2 = _1 + 1;
+  *x = _2;
+}
+
+
+main ()
+{
+  int D.39786;
+
+  {
+    int m;
+
+    try
+      {
+        m = 1;
+        increment (&m);
+        D.39786 = 0;
+        return D.39786;
+      }
+    finally
+      {
+        m = {CLOBBER};
+      }
+  }
+  D.39786 = 0;
+  return D.39786;
+}
+
+
+__static_initialization_and_destruction_0 (int __initialize_p, int __priority)
+{
+  if (__initialize_p == 1) goto <D.39789>; else goto <D.39790>;
+  <D.39789>:
+  if (__priority == 65535) goto <D.39791>; else goto <D.39792>;
+  <D.39791>:
+  std::ios_base::Init::Init (&__ioinit);
+  __cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+  goto <D.39793>;
+  <D.39792>:
+  <D.39793>:
+  goto <D.39794>;
+  <D.39790>:
+  <D.39794>:
+}
+
+
+_GLOBAL__sub_I__Z9incrementRi ()
+{
+  __static_initialization_and_destruction_0 (1, 65535);
+}
+
+

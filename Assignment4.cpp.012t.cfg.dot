@@ -1,0 +1,104 @@
+digraph "pbr.cpp.012t.cfg" {
+overlap=false;
+subgraph "cluster_increment" {
+	style="dashed";
+	color="black";
+	label="increment ()";
+	fn_1524_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1524_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1524_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|_1\ =\ *x;\l\
+|_2\ =\ _1\ +\ 1;\l\
+|*x\ =\ _2;\l\
+|return;\l\
+}"];
+
+	fn_1524_basic_block_0:s -> fn_1524_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1524_basic_block_2:s -> fn_1524_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1524_basic_block_0:s -> fn_1524_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1525_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1525_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1525_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|m\ =\ 1;\l\
+|increment\ (&m);\l\
+|D.39786\ =\ 0;\l\
+|m\ =\ \{CLOBBER\};\l\
+}"];
+
+	fn_1525_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.39786;\l\
+}"];
+
+	fn_1525_basic_block_0:s -> fn_1525_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1525_basic_block_2:s -> fn_1525_basic_block_3:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1525_basic_block_3:s -> fn_1525_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1525_basic_block_0:s -> fn_1525_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster___static_initialization_and_destruction_0" {
+	style="dashed";
+	color="black";
+	label="__static_initialization_and_destruction_0 ()";
+	fn_1940_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1940_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1940_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|if\ (__initialize_p\ ==\ 1)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1940_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|if\ (__priority\ ==\ 65535)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1940_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|std::ios_base::Init::Init\ (&__ioinit);\l\
+|__cxa_atexit\ (__dt_comp\ ,\ &__ioinit,\ &__dso_handle);\l\
+}"];
+
+	fn_1940_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|return;\l\
+}"];
+
+	fn_1940_basic_block_0:s -> fn_1940_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1940_basic_block_2:s -> fn_1940_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1940_basic_block_2:s -> fn_1940_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1940_basic_block_3:s -> fn_1940_basic_block_4:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1940_basic_block_3:s -> fn_1940_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1940_basic_block_4:s -> fn_1940_basic_block_5:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1940_basic_block_5:s -> fn_1940_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1940_basic_block_0:s -> fn_1940_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster__GLOBAL__sub_I__Z9incrementRi" {
+	style="dashed";
+	color="black";
+	label="_GLOBAL__sub_I__Z9incrementRi ()";
+	fn_1941_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1941_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1941_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|__static_initialization_and_destruction_0\ (1,\ 65535);\l\
+|return;\l\
+}"];
+
+	fn_1941_basic_block_0:s -> fn_1941_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1941_basic_block_2:s -> fn_1941_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1941_basic_block_0:s -> fn_1941_basic_block_1:n [style="invis",constraint=true];
+}
+}
